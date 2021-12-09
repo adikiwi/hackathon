@@ -1,15 +1,15 @@
 // ! CREATE
 
-const API = "http://localhost:8000";
+const API = "http://localhost:3000/students";
 
-let inpName = ".inp-name";
-let inpLastname = ".inp-lastname";
-let inpNumber = ".inp-number";
-let inpWeekKpi = ".inp-week-kpi";
-let inpMonthKpi = ".inp-month-kpi";
-let addForm = ".add-form";
+let inpName = $(".inp-name");
+let inpLastname = $(".inp-lastname");
+let inpNumber = $(".inp-number");
+let inpWeekKpi = $(".inp-week-kpi");
+let inpMonthKpi = $(".inp-month-kpi");
+let addForm = $(".add-form");
 
-function addStudent(event) {
+async function addStudent(event) {
   event.preventDefault();
   let name = inpName.val().trim();
   let lastname = inpLastname.val().trim();
@@ -22,7 +22,6 @@ function addStudent(event) {
     number,
     weekKpi,
     monthKpi,
-    newStudent,
   };
   for (let key in newStudent) {
     if (!newStudent[key]) {
@@ -31,7 +30,13 @@ function addStudent(event) {
     }
   }
   let response = await axios.post(API, newStudent);
+
   console.log(response);
 }
 
 addForm.on("submit", addStudent);
+
+
+
+// ! READ для добавление студентов в карточки.
+ let studentList = $(".student-list")
