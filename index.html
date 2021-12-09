@@ -14,7 +14,7 @@
 <!-- Button trigger modal -->
 <div class="container">
     <button type="button" class="btn add-student btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Добавить
+        Add
     </button>
       
       <!-- Modal -->
@@ -22,7 +22,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Добавить студента</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Add Student Info</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -51,20 +51,70 @@
       </div>
 </div>
 
+
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Student Info</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="add-block">
+                    <div class="add-block">
+                        <div class="add-block">
+                            <form class="update-form">
+                                <input class="form-control edit-name" type="text" placeholder="Name"
+                                aria-label="default input example">
+                                <input class="form-control edit-lastname" type="text" placeholder="Lastname"
+                                    aria-label="default input example">
+                                <input class="form-control edit-number" type="number" placeholder="Mobile"
+                                    aria-label="default input example">
+                                <input class="form-control edit-week-kpi" type="number" placeholder="Week KPI"
+                                    aria-label="default input example">
+                                <input class="form-control edit-month-kpi " type="number" placeholder="Month KPI"
+                                    aria-label="default input example">
+                                <button type="submit" class="btn-save-student btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 <!-- Search input  -->
 <div class="search-block container mt-3">
     <input placeholder="Live search..." class="form-control search-inp" type="text">
 </div>
 
 
-<!-- Div list for student -->
-<div class="students">
-    <div class="container">
-        <div class="student-list">
 
-        </div>
-    </div>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+           <th>ID</th>
+                  <th>Name</th>
+                  <th>Lastname</th>
+                  <th>Phone Number</th>
+                  <th>Week KPI</th>
+                  <th>Month KPI</th>
+                  <th>Delete</th>
+                  <th>Update</th>
+          </tr>
+        </thead>
+        <tbody class="t-body">
+        </tbody>
+      </table>
 </div>
+
+
 
 
 
