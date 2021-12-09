@@ -30,13 +30,23 @@ async function addStudent(event) {
     }
   }
   let response = await axios.post(API, newStudent);
-
   console.log(response);
+    inpName.val("")
+    inpLastname.val("");
+    inpNumber.val("");
+    inpWeekKpi.val("");
+    inpMonthKpi.val("")
 }
 
 addForm.on("submit", addStudent);
 
+// ! Search 
+ let searchInp = $(".search-inp")
 
+ async function liveSearch(event) {
+     let value = event.target.value;
+     let newAPI = `${API}?q${value}`
+    //!  getStudent(newAPI) - включишь когда будет функция GETSTUDENTS
+ }
 
-// ! READ для добавление студентов в карточки.
- let studentList = $(".student-list")
+ searchInp.on("input", liveSearch)

@@ -1,0 +1,8 @@
+.container{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+.add-block input{
+    margin-bottom: 10px;
+}
