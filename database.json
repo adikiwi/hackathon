@@ -1,76 +1,12 @@
 {
   "students": [
     {
-      "name": "asdasd",
-      "lastname": "asdasd",
-      "number": "asdasd",
-      "weekKpi": "123",
-      "monthKpi": "123",
+      "name": "Adilet",
+      "lastname": "Atambaev",
+      "number": "0550339001",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 1
-    },
-    {
-      "name": "asdasd",
-      "lastname": "asdasd",
-      "number": "asdasd",
-      "weekKpi": "123",
-      "monthKpi": "123",
-      "id": 2
-    },
-    {
-      "name": "asdasd",
-      "lastname": "asdasd",
-      "number": "asdasd",
-      "weekKpi": "123",
-      "monthKpi": "123",
-      "id": 3
-    },
-    {
-      "name": "asdasd",
-      "lastname": "asdasd",
-      "number": "asdasd",
-      "weekKpi": "123",
-      "monthKpi": "123",
-      "id": 4
-    },
-    {
-      "name": "asdasd",
-      "lastname": "asdasd",
-      "number": "asdad",
-      "weekKpi": "1231",
-      "monthKpi": "123123",
-      "id": 5
-    },
-    {
-      "name": "asdad",
-      "lastname": "asdasd",
-      "number": "asdasd",
-      "weekKpi": "123",
-      "monthKpi": "123",
-      "id": 6
-    },
-    {
-      "name": "asdasd",
-      "lastname": "asdads",
-      "number": "asdad",
-      "weekKpi": "1231",
-      "monthKpi": "123",
-      "id": 7
-    },
-    {
-      "name": "asd",
-      "lastname": "asda",
-      "number": "asdasd",
-      "weekKpi": "123123",
-      "monthKpi": "12312",
-      "id": 8
-    },
-    {
-      "name": "asd",
-      "lastname": "asda",
-      "number": "asdasd",
-      "weekKpi": "123123",
-      "monthKpi": "12312",
-      "id": 9
     }
   ]
 }
