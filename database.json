@@ -7,6 +7,38 @@
       "weekKpi": "1212",
       "monthKpi": "121",
       "id": 1
+    },
+    {
+      "name": "tilegen",
+      "lastname": "Asankulov",
+      "number": "700826355",
+      "weekKpi": "12",
+      "monthKpi": "12",
+      "id": 2
+    },
+    {
+      "name": "tilegen",
+      "lastname": "Asankulov",
+      "number": "700826355",
+      "weekKpi": "12",
+      "monthKpi": "12",
+      "id": 3
+    },
+    {
+      "name": "wqw",
+      "lastname": "qwq",
+      "number": "1213",
+      "weekKpi": "21",
+      "monthKpi": "121",
+      "id": 4
+    },
+    {
+      "name": "da",
+      "lastname": "sad",
+      "number": "12",
+      "weekKpi": "12",
+      "monthKpi": "12",
+      "id": 5
     }
   ]
 }
