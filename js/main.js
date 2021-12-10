@@ -39,7 +39,7 @@ async function addStudent(event) {
   inpMonthKpi.val("");
   $(".modal").modal("hide");
 }
-
+// addPagination(pagesCount)
 addForm.on("submit", addStudent);
 
 // ! Read
@@ -64,7 +64,7 @@ async function getStudents(API) {
     </tr>
 `);
   });
-  
+  addPagination(pagesCount)
 }
 
 getStudents(API);
@@ -146,7 +146,7 @@ searchInp.on("input", liveSearch);
 
 // //! Pagination 
 
-const studentsPerPage = 3;
+const studentsPerPage = 2;
 let pagesCount = 1;
 let currentPage = 1;
 let totalStudentsCount = 0;
