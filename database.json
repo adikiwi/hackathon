@@ -2,30 +2,6 @@
   "students": [
     {
       "name": "tilegen",
-      "lastname": "Asankulov",
-      "number": "700826355",
-      "weekKpi": "122",
-      "monthKpi": "12",
-      "id": 2
-    },
-    {
-      "name": "tilegen",
-      "lastname": "Asankulov",
-      "number": "700826355",
-      "weekKpi": "12",
-      "monthKpi": "12",
-      "id": 3
-    },
-    {
-      "name": "da",
-      "lastname": "sad",
-      "number": "12",
-      "weekKpi": "12",
-      "monthKpi": "12",
-      "id": 5
-    },
-    {
-      "name": "tilegen",
       "lastname": "asankulov",
       "number": "1212123",
       "weekKpi": "100",
@@ -55,6 +31,46 @@
       "weekKpi": "12",
       "monthKpi": "12",
       "id": 10
+    },
+    {
+      "name": "wfw",
+      "lastname": "edwd",
+      "number": "12",
+      "weekKpi": "12",
+      "monthKpi": "12",
+      "id": 11
+    },
+    {
+      "name": "tilegen",
+      "lastname": "121",
+      "number": "121",
+      "weekKpi": "121121",
+      "monthKpi": "1212",
+      "id": 12
+    },
+    {
+      "name": "121",
+      "lastname": "121",
+      "number": "121",
+      "weekKpi": "121",
+      "monthKpi": "121",
+      "id": 13
+    },
+    {
+      "name": "121",
+      "lastname": "121",
+      "number": "1212",
+      "weekKpi": "121",
+      "monthKpi": "1212",
+      "id": 14
+    },
+    {
+      "name": "12121",
+      "lastname": "1212",
+      "number": "121",
+      "weekKpi": "1212",
+      "monthKpi": "121",
+      "id": 15
     }
   ]
 }
