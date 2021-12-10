@@ -71,6 +71,14 @@
       "weekKpi": "1212",
       "monthKpi": "121",
       "id": 15
+    },
+    {
+      "name": "Adilet",
+      "lastname": "Atambaev",
+      "number": "0550339001",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 16
     }
   ]
 }
