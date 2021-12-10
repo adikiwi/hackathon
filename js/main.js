@@ -37,20 +37,22 @@ async function addStudent(event) {
   inpNumber.val("");
   inpWeekKpi.val("");
   inpMonthKpi.val("");
+  $(".modal").modal("hide");
 }
-
+// addPagination(pagesCount)
 addForm.on("submit", addStudent);
 
 // ! Read
 
 let tableBody = $(".t-body");
+let students = [];
 async function getStudents(API) {
   let response = await axios(API);
   tableBody.html("");
   response.data.forEach((item) => {
     tableBody.append(`
     <tr>
-      <td>${item.id}</td>
+        <td>${item.id}</td>
       <td>${item.name}</td>
       <td>${item.lastname}</td>
       <td>${item.number}</td>
@@ -61,6 +63,7 @@ async function getStudents(API) {
     </tr>
 `);
   });
+  addPagination(pagesCount);
 }
 
 getStudents(API);
@@ -135,7 +138,88 @@ let searchInp = $(".search-inp");
 async function liveSearch(event) {
   let value = event.target.value;
   let newAPI = `${API}?q=${value}`;
-  !getStudents(newAPI); //- включишь когда будет функция GETSTUDENTS
+  getStudents(newAPI);
 }
 
 searchInp.on("input", liveSearch);
+
+// //! Pagination
+
+const studentsPerPage = 2;
+let pagesCount = 1;
+let currentPage = 1;
+let totalStudentsCount = 0;
+
+function handlePagination() {
+  let indexOfLastStudetnt = currentPage * studentsPerPage;
+  let indexOfFirstStudent = indexOfLastStudetnt - studentsPerPage;
+  const currentStudents = students.slice(
+    indexOfFirstStudent,
+    indexOfLastStudetnt
+  );
+  totalStudentsCount = students.length;
+  console.log(totalStudentsCount);
+  pagesCount = Math.ceil(totalStudentsCount / studentsPerPage);
+  addPagination(pagesCount);
+  getStudents(currentStudents);
+}
+
+let pagination = $(".pagination");
+function addPagination(pagesCount) {
+  pagination.html("");
+
+  // Previos button
+  pagination.append(`
+    <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
+<a class="page-link prev-item" href="#" aria-label="Previous">
+  <span aria-hidden="true">&laquo;</span>
+</a>
+</li>
+    `);
+
+  // Page number button
+  for (let i = 1; i <= pagesCount; i++) {
+    if (i == currentPage) {
+      pagination.append(`
+          <li class="page-item active">
+          <a class="page-link pagination-item" href="#">${i}</a>
+          </li>
+        `);
+    } else {
+      pagination.append(`
+      <li class="page-item">
+          <a class="page-link pagination-item" href="#">${i}</a>
+      </li>
+      `);
+    }
+  }
+
+  // Next button
+  pagination.append(`
+      <li class="page-item ${currentPage === pagesCount ? "disabled" : ""}">
+    <a class="page-link next-item" href="#" aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+  </li>
+      `);
+}
+
+function paginate(event) {
+  let newPage = event.target.innerText;
+  currentPage = +newPage;
+  handlePagination();
+}
+
+$(document).on("click", ".pagination-item", paginate);
+
+function nextPage() {
+  currentPage++;
+  handlePaginatoin();
+}
+function prevPage() {
+  currentPage--;
+  handlePaginatoin();
+}
+
+$(document).on("click", ".next-item", nextPage);
+$(document).on("click", ".prev-item", prevPage);
