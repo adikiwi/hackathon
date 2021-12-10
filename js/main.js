@@ -48,8 +48,7 @@ let tableBody = $(".t-body");
 let students = [];
 async function getStudents(API) {
   let response = await axios(API);
-  console.log(response);
-  students = response.data
+   students = response.data
   handlePagination()
 }
 
@@ -142,12 +141,12 @@ let searchInp = $(".search-inp");
 async function liveSearch(event) {
   let value = event.target.value;
   let newAPI = `${API}?q=${value}`;
-  getStudents(newAPI); 
+  getStudents(newAPI);
 }
 
 searchInp.on("input", liveSearch);
 
-// //! Pagination 
+// //! Pagination
 
 const studentsPerPage = 2;
 let pagesCount = 1;
@@ -155,6 +154,7 @@ let currentPage = 1;
 let totalStudentsCount = 0;
 
 function handlePagination() {
+
     let indexOfLastStudent = currentPage * studentsPerPage
     let indexOfFirstStudent = indexOfLastStudent - studentsPerPage
     const currentStudents = students.slice(
@@ -169,55 +169,52 @@ function handlePagination() {
 }
 
 let pagination = $(".pagination");
-function addPagination(pagesCount){
-    pagination.html("");
+function addPagination(pagesCount) {
+  pagination.html("");
 
-    // Previos button
-    pagination.append(`
-    <li class="page-item ${currentPage === 1 ? "disabled": "" }">
+  // Previos button
+  pagination.append(`
+    <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
 <a class="page-link prev-item" href="#" aria-label="Previous">
   <span aria-hidden="true">&laquo;</span>
 </a>
 </li>
     `);
 
-
-    // Page number button
-    for (let i = 1; i <= pagesCount; i++) {
-        if (i == currentPage) {
-          pagination.append(`
+  // Page number button
+  for (let i = 1; i <= pagesCount; i++) {
+    if (i == currentPage) {
+      pagination.append(`
           <li class="page-item active">
           <a class="page-link pagination-item" href="#">${i}</a>
           </li>
         `);
-        } else {
-          pagination.append(`
+    } else {
+      pagination.append(`
       <li class="page-item">
           <a class="page-link pagination-item" href="#">${i}</a>
       </li>
       `);
-        }
-      }
-      
+    }
+  }
 
-      // Next button
-      pagination.append(`
-      <li class="page-item ${currentPage == pagesCount ? "disabled":""}">
+  // Next button
+  pagination.append(`
+      <li class="page-item ${currentPage == pagesCount ? "disabled" : ""}">
     <a class="page-link next-item" href="#" aria-label="Next">
       <span aria-hidden="true">&raquo;</span>
     </a>
   </li>
-      `)
-};
-
-
-function paginate(event){
-    let newPage = event.target.innerText
-    currentPage = +newPage
-    handlePagination()
+      `);
 }
 
-$(document).on("click", ".pagination-item", paginate)
+function paginate(event) {
+  let newPage = event.target.innerText;
+  currentPage = +newPage;
+  handlePagination();
+}
+
+$(document).on("click", ".pagination-item", paginate);
 
 function nextPage() {
     currentPage++;
