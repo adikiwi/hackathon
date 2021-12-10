@@ -48,14 +48,14 @@ let tableBody = $(".t-body");
 let students = [];
 async function getStudents(API) {
   let response = await axios(API);
-   students = response.data
-  handlePagination()
+  students = response.data;
+  handlePagination();
 }
 
-function render(data){
-    tableBody.html("");
-    data.forEach((item) => {
-        tableBody.append(`
+function render(data) {
+  tableBody.html("");
+  data.forEach((item) => {
+    tableBody.append(`
         <tr>
             <td>${item.id}</td>
           <td>${item.name}</td>
@@ -67,7 +67,7 @@ function render(data){
           <td><button id="${item.id}" class="btn btn-edit btn-warning edit-user" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td>
         </tr>
     `);
-      });
+  });
 }
 getStudents(API);
 
@@ -148,24 +148,23 @@ searchInp.on("input", liveSearch);
 
 // //! Pagination
 
-const studentsPerPage = 2;
+const studentsPerPage = 5;
 let pagesCount = 1;
 let currentPage = 1;
 let totalStudentsCount = 0;
 
 function handlePagination() {
-
-    let indexOfLastStudent = currentPage * studentsPerPage
-    let indexOfFirstStudent = indexOfLastStudent - studentsPerPage
-    const currentStudents = students.slice(
-        indexOfFirstStudent,
-        indexOfLastStudent
-    );
-    totalStudentsCount = students.length;
-    console.log(totalStudentsCount);
-    pagesCount = Math.ceil(totalStudentsCount / studentsPerPage)
-    addPagination(pagesCount);
-    render(currentStudents)
+  let indexOfLastStudent = currentPage * studentsPerPage;
+  let indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
+  const currentStudents = students.slice(
+    indexOfFirstStudent,
+    indexOfLastStudent
+  );
+  totalStudentsCount = students.length;
+  console.log(totalStudentsCount);
+  pagesCount = Math.ceil(totalStudentsCount / studentsPerPage);
+  addPagination(pagesCount);
+  render(currentStudents);
 }
 
 let pagination = $(".pagination");
@@ -217,14 +216,13 @@ function paginate(event) {
 $(document).on("click", ".pagination-item", paginate);
 
 function nextPage() {
-    currentPage++;
-    handlePagination()
-    
-  }
-  function prevPage() {
-    currentPage--;
-    handlePagination()
-  }
-  
-  $(document).on("click", ".next-item", nextPage)
-  $(document).on("click", ".prev-item", prevPage)
+  currentPage++;
+  handlePagination();
+}
+function prevPage() {
+  currentPage--;
+  handlePagination();
+}
+
+$(document).on("click", ".next-item", nextPage);
+$(document).on("click", ".prev-item", prevPage);

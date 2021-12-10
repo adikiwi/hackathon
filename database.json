@@ -1,53 +1,108 @@
 {
   "students": [
     {
-      "name": "tjdk",
-      "lastname": "adda",
-      "number": "1212",
-      "weekKpi": "121",
-      "monthKpi": "1212",
+      "name": "Beksultan",
+      "lastname": "Altymyshov",
+      "number": "0555555555",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 1
+    },
+    {
+      "name": "Azat",
+      "lastname": "Baishev",
+      "number": "0772563253",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 2
+    },
+    {
+      "name": "Raul",
+      "lastname": "Butter",
+      "number": "0550123456",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 3
+    },
+    {
+      "name": "Asambulov",
+      "lastname": "Tilegen",
+      "number": "0705235678",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 4
+    },
+    {
+      "name": "Aisha",
+      "lastname": "Abazbekova",
+      "number": "0553987654",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 5
+    },
+    {
+      "name": "Aigerim",
+      "lastname": "Kemilbekova",
+      "number": "0556873475",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 6
+    },
+    {
+      "name": "Sarybayeva",
+      "lastname": "Bermet",
+      "number": "0772123543",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 7
     },
     {
-      "name": "dwd",
-      "lastname": "ed",
-      "number": "121",
-      "weekKpi": "12",
-      "monthKpi": "12",
+      "name": "Tariel",
+      "lastname": "Imankulov",
+      "number": "0705344255",
+      "weekKpi": "100",
+      "monthKpi": "100",
+      "id": 8
+    },
+    {
+      "name": "Adilet",
+      "lastname": "Atambaev",
+      "number": "0550000000",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 9
     },
     {
-      "name": "12",
-      "lastname": "12",
-      "number": "12",
-      "weekKpi": "12",
-      "monthKpi": "12",
+      "name": "Ajibek",
+      "lastname": "Toroev",
+      "number": "0999555777",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 10
     },
     {
-      "name": "wfw",
-      "lastname": "edwd",
-      "number": "12",
-      "weekKpi": "12",
-      "monthKpi": "12",
+      "name": "Begimay",
+      "lastname": "Adamkalieva",
+      "number": "0563551344",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 11
     },
     {
-      "name": "tilegen",
-      "lastname": "121",
-      "number": "121",
-      "weekKpi": "121121",
-      "monthKpi": "1212",
+      "name": "Erjan",
+      "lastname": "Osmonov",
+      "number": "0551239988",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 12
     },
     {
-      "name": "121",
-      "lastname": "121",
-      "number": "121",
-      "weekKpi": "121",
-      "monthKpi": "121",
+      "name": "Saparali",
+      "lastname": "Akmatali uulu",
+      "number": "0555876534",
+      "weekKpi": "100",
+      "monthKpi": "100",
       "id": 13
-
     }
   ]
 }
