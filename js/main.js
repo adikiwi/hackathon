@@ -48,24 +48,27 @@ let tableBody = $(".t-body");
 let students = [];
 async function getStudents(API) {
   let response = await axios(API);
-  tableBody.html("");
-  response.data.forEach((item) => {
-    tableBody.append(`
-    <tr>
-        <td>${item.id}</td>
-      <td>${item.name}</td>
-      <td>${item.lastname}</td>
-      <td>${item.number}</td>
-      <td>${item.weekKpi}</td>
-      <td>${item.monthKpi}</td>
-      <td><button class="btn btn-delete btn-danger delete-user" id="${item.id}">DELETE</button></td>
-      <td><button id="${item.id}" class="btn btn-edit btn-warning edit-user" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td>
-    </tr>
-`);
-  });
-  addPagination(pagesCount);
+   students = response.data
+  handlePagination()
 }
 
+function render(data){
+    tableBody.html("");
+    data.forEach((item) => {
+        tableBody.append(`
+        <tr>
+            <td>${item.id}</td>
+          <td>${item.name}</td>
+          <td>${item.lastname}</td>
+          <td>${item.number}</td>
+          <td>${item.weekKpi}</td>
+          <td>${item.monthKpi}</td>
+          <td><button class="btn btn-delete btn-danger delete-user" id="${item.id}">DELETE</button></td>
+          <td><button id="${item.id}" class="btn btn-edit btn-warning edit-user" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td>
+        </tr>
+    `);
+      });
+}
 getStudents(API);
 
 // ! Delete
@@ -151,17 +154,18 @@ let currentPage = 1;
 let totalStudentsCount = 0;
 
 function handlePagination() {
-  let indexOfLastStudetnt = currentPage * studentsPerPage;
-  let indexOfFirstStudent = indexOfLastStudetnt - studentsPerPage;
-  const currentStudents = students.slice(
-    indexOfFirstStudent,
-    indexOfLastStudetnt
-  );
-  totalStudentsCount = students.length;
-  console.log(totalStudentsCount);
-  pagesCount = Math.ceil(totalStudentsCount / studentsPerPage);
-  addPagination(pagesCount);
-  getStudents(currentStudents);
+
+    let indexOfLastStudent = currentPage * studentsPerPage
+    let indexOfFirstStudent = indexOfLastStudent - studentsPerPage
+    const currentStudents = students.slice(
+        indexOfFirstStudent,
+        indexOfLastStudent
+    );
+    totalStudentsCount = students.length;
+    console.log(totalStudentsCount);
+    pagesCount = Math.ceil(totalStudentsCount / studentsPerPage)
+    addPagination(pagesCount);
+    render(currentStudents)
 }
 
 let pagination = $(".pagination");
@@ -196,7 +200,7 @@ function addPagination(pagesCount) {
 
   // Next button
   pagination.append(`
-      <li class="page-item ${currentPage === pagesCount ? "disabled" : ""}">
+      <li class="page-item ${currentPage == pagesCount ? "disabled" : ""}">
     <a class="page-link next-item" href="#" aria-label="Next">
       <span aria-hidden="true">&raquo;</span>
     </a>
@@ -213,13 +217,14 @@ function paginate(event) {
 $(document).on("click", ".pagination-item", paginate);
 
 function nextPage() {
-  currentPage++;
-  handlePaginatoin();
-}
-function prevPage() {
-  currentPage--;
-  handlePaginatoin();
-}
-
-$(document).on("click", ".next-item", nextPage);
-$(document).on("click", ".prev-item", prevPage);
+    currentPage++;
+    handlePagination()
+    
+  }
+  function prevPage() {
+    currentPage--;
+    handlePagination()
+  }
+  
+  $(document).on("click", ".next-item", nextPage)
+  $(document).on("click", ".prev-item", prevPage)
